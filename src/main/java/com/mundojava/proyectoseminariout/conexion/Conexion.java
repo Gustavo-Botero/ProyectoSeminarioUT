@@ -9,21 +9,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Conexion {
-    
+
     private Connection conexion;
     private Statement st;
+
     public Conexion() {
     }
-    
-    public void conectar(){
+
+    public void conectar() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(ConexionLiterales.DRIVER_MYSQL.getDato());
             conexion = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306",
-                    "root",
-                    "GustavoB92"
+                    ConexionLiterales.CONEXION_BD_URL.getDato(),
+                    ConexionLiterales.CONEXION_BD_USER.getDato(),
+                    ConexionLiterales.CONEXION_BD_PASSWORD.getDato()
             );
-            
+
             st = conexion.createStatement();
             //System.out.println("Conexión OK");
         } catch (ClassNotFoundException ex) {
@@ -33,6 +34,17 @@ public class Conexion {
         }
     }
     
+    public int actualizar(String cadeSQL) {
+        int res = 0;
+        try {
+            res = st.executeUpdate(cadeSQL);
+        } catch (SQLException ex) {
+            System.out.println("Error en sentencia SQL " + cadeSQL + ": " + ex.getMessage());
+        } finally {
+            return res;
+        }
+    }
+
     public ResultSet consultar(String cadeSQL) {
         ResultSet rs = null;
         try {
@@ -43,12 +55,16 @@ public class Conexion {
             return rs;
         }
     }
-    
-    public void desconectar(){
+
+    public void desconectar() {
         try {
-            if(st != null) st.close();
-            if(conexion != null) conexion.close();
-            
+            if (st != null) {
+                st.close();
+            }
+            if (conexion != null) {
+                conexion.close();
+            }
+
             System.out.println("Desconectado de la base de datos");
         } catch (SQLException ex) {
             System.out.println("Error desconectando la base de datos: " + ex.getMessage());
