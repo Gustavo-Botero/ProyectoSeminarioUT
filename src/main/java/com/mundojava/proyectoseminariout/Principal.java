@@ -1,4 +1,4 @@
-package com.mycompany.proyectoseminariout;
+package com.mundojava.proyectoseminariout;
 
 import com.mundojava.proyectoseminariout.estado.EstadoDAO;
 import com.mundojava.proyectoseminariout.estado.EstadoDTO;
@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Principal {
     public static void main(String[] args) {
-        System.out.println("Hola Mundo");
         
         EstadoDAO estadoDAO = new EstadoDAO();
         
@@ -47,7 +46,7 @@ public class Principal {
         System.out.println("Dato no pudo ser eliminado");
         }*/
         
-        EstadoDTO modificandoEstado = new EstadoDTO(0,"PENDIENTE DE FALLO", 0);
+        EstadoDTO modificandoEstado = new EstadoDTO(0,"PENDIENTE", 0);
         int modificar = estadoDAO.modificar(2, modificandoEstado);
         
         if ( modificar > 0 ) {

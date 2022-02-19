@@ -6,7 +6,7 @@ public enum EstadoLiterales {
     SQL_CONSULTA_POR_NOMBRE("SELECT * FROM estado WHERE estado LIKE '%?%'"),
     SQL_INSERTAR("INSERT INTO estado (estado, seProcesa) VALUES ('?1', '?2')"),
     SQL_ELIMINAR("DELETE FROM estado WHERE id = ?"),
-    SQL_MODIFICAR("UPDATE estado SET estado = '?1' WHERE id = ?2"),
+    SQL_MODIFICAR("UPDATE estado SET estado = '?1', seProcesa = '?2' WHERE id = ?3"),
     CAMPO_ID("id"),
     CAMPO_ESTADO("estado");
 

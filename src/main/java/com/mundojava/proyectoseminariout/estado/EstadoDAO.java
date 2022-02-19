@@ -81,8 +81,9 @@ public class EstadoDAO implements Dao<EstadoDTO>, PorNombre<EstadoDTO> {
         
         String cadeSQL = EstadoLiterales.SQL_MODIFICAR.getDato()
                 .replace("?1", nuevoDato.getEstado().toUpperCase())
-                .replace("?2", String.valueOf(id));
-        System.out.println("cadeSQL = " + cadeSQL);
+                .replace("?2", String.valueOf(nuevoDato.getSeProcesa()))
+                .replace("?3", String.valueOf(id));
+        
         return conexion.actualizar(cadeSQL);
     }
     
