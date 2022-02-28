@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/Users/gustavobotero/Documents/ProyectoSeminarioUT/src/com/mundojava/proyectoseminario/Principal.java</file>
+        </group>
+>>>>>>> f2856cec16a67e463647c5ece9ac4221f3bcbd1a
     </open-files>
 </project-private>
