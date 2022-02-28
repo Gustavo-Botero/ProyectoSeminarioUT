@@ -12,7 +12,7 @@ public class Principal {
         
         vistaMenuPrincipal.ejecutar();
         
-        /*EstadoDAO estadoDAO = new EstadoDAO();
+        EstadoDAO estadoDAO = new EstadoDAO();
         
         List<EstadoDTO> estados = estadoDAO.listar();
         System.out.println("lista de estados");
@@ -25,7 +25,7 @@ public class Principal {
         }
         
         System.out.println("------------------------");
-        
+        /*
         EstadoDTO estado = estadoDAO.consultarPorId(2);
         System.out.println(estado);
         

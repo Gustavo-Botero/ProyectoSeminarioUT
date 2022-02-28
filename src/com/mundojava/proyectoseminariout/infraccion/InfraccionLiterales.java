@@ -9,7 +9,8 @@ public enum InfraccionLiterales {
     CAMPO_VEHICULO_ID("vehiculo_id"),
     CAMPO_ESTADO_ID("estado_id"),
     CAMPO_FECHA("fecha"),
-    CAMPO_AGENTE_ID("agente_id");
+    CAMPO_AGENTE_ID("agente_id"),
+    MSJ_ERROR_CONSULTA("Error en la consulta ");
     
     
     private final String dato;

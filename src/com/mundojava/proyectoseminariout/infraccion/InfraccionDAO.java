@@ -42,7 +42,7 @@ public class InfraccionDAO implements Dao<InfraccionDTO> {
             }
 
         } catch (SQLException ex) {
-            System.out.println("Error en la consulta " + ex.getMessage());
+            System.out.println(InfraccionLiterales.MSJ_ERROR_CONSULTA.getDato() + ex.getMessage());
         } finally {
             return lista;
         }
