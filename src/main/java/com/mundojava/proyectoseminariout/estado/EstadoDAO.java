@@ -65,8 +65,6 @@ public class EstadoDAO implements Dao<EstadoDTO>, PorNombre<EstadoDTO> {
 
     @Override
     public int adicionar(EstadoDTO obj) {
-
-        
         String cadeSQL = EstadoLiterales.SQL_INSERTAR.getDato()
                 .replace("?1", obj.getEstado().toUpperCase())
                 .replace("?2", String.valueOf(obj.getSeProcesa()));
